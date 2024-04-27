@@ -8,15 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="students" />
         <module name="eureka-server" />
+        <module name="cloudconfigserver" />
         <module name="teachers" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="cloudconfigserver" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cloudconfigserver" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="students" options="-parameters" />
       <module name="teachers" options="-parameters" />

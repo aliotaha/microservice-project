@@ -2,6 +2,11 @@ package com.servicea.students.rest;
 
 import java.util.List;
 
+import com.servicea.students.dao.AccountsContactInfoDto;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +22,9 @@ import com.servicea.students.entity.Student;
 @RestController
 @RequestMapping("/api")
 public class StudentRestController {
-	
+
+    @Autowired
+    private AccountsContactInfoDto accountsContactInfoDto;
 	private StudentService student;
     
     public StudentRestController(StudentService theStudentDAO) {
@@ -47,5 +54,11 @@ public class StudentRestController {
     public Student updateStudent(@RequestBody Student theStudent ) {
     	
         return student.updateStudent(theStudent);
+    }
+    @GetMapping("/contact-info")
+    public ResponseEntity<AccountsContactInfoDto> getContactInfo() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(accountsContactInfoDto);
     }
 }

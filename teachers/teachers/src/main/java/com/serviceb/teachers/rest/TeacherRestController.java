@@ -2,7 +2,10 @@ package com.serviceb.teachers.rest;
 
 import java.util.List;
 
+import com.serviceb.teachers.service.AccountsContactInfoDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +21,9 @@ import com.serviceb.teachers.service.TeacherServices;
 @RestController
 @RequestMapping("/api")
 public class TeacherRestController {
+
+    @Autowired
+    private AccountsContactInfoDto accountsContactInfoDto;
 	private TeacherServices teacherservices;
 	@Autowired
     public TeacherRestController(TeacherServices theTeacher) {
@@ -47,6 +53,12 @@ public class TeacherRestController {
     public Teacher updateTeacher(@RequestBody Teacher theTeacher ) {
     	
         return teacherservices.updateTeacher(theTeacher);
+    }
+    @GetMapping("/contact-info")
+    public ResponseEntity<AccountsContactInfoDto> getContactInfo() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(accountsContactInfoDto);
     }
 	
 
