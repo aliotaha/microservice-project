@@ -1,0 +1,8 @@
+students:
+  message: "Welcome to Students related Production local APIs "
+  contactDetails:
+    name: "Taha - Production Lead"
+    email: "taha@tus.com"
+  onCallSupport:
+    - (555) 344-1234
+    - (555) 884-1345

@@ -1,0 +1,8 @@
+teachers:
+  message: "Welcome to Teachers related QA local APIs "
+  contactDetails:
+    name: "Mahgoub - QA Lead"
+    email: "mahgoub@tus.com"
+  onCallSupport:
+    - (555) 123-1234
+    - (555) 321-1345

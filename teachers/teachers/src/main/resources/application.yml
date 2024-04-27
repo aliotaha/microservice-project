@@ -2,22 +2,18 @@ server:
   port: 8082
 spring:
   application:
-    name: teachers
+    name: "teachers"
+  profiles:
+    active: "prod"
   datasource:
     url: jdbc:mysql://localhost:3306/teacher_db
     username: springstudent
     password: springstudent
+  config:
+    import: "optional:configserver:http://localhost:8071/"
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
-teachers:
-  message: "Welcome to Teachers related local APIs "
-  contactDetails:
-    name: "Ali - Developer"
-    email: "ali@tus.com"
-  onCallSupport:
-    - (555) 555-1234
-    - (555) 523-1345
 

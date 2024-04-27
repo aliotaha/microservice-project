@@ -1,0 +1,10 @@
+students:
+  message: "Welcome to Students related local APIs "
+  contactDetails:
+    name: "Omer - Developer"
+    email: "omer@tus.com"
+  onCallSupport:
+      - (555) 666-1234
+      - (555) 787-1345
+
+

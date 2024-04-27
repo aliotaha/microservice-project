@@ -1,0 +1,8 @@
+students:
+  message: "Welcome to Students related QA local APIs "
+  contactDetails:
+    name: "Hassan - QA Lead"
+    email: "hassan@tus.com"
+  onCallSupport:
+    - (555) 909-1234
+    - (555) 878-1345
