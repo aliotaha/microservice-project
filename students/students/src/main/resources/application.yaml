@@ -1,0 +1,24 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: students
+  datasource:
+    url: jdbc:mysql://localhost:3306/student_tracker
+    username: springstudent
+    password: springstudent
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+students:
+  message: "Welcome to Teachers related local APIs "
+  contactDetails:
+    name: "Omer - Developer"
+    email: "omer@tus.com"
+  onCallSupport:
+      - (555) 666-1234
+      - (555) 787-1345
+
+
