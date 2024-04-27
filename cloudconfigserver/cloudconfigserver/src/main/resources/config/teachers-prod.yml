@@ -1,8 +1,0 @@
-teachers:
-  message: "Welcome to Teachers related Production local APIs "
-  contactDetails:
-    name: "Salah - Production Lead"
-    email: "salah@tus.com"
-  onCallSupport:
-    - (555) 456-1234
-    - (555) 654-1345
