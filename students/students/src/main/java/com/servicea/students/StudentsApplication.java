@@ -1,6 +1,6 @@
 package com.servicea.students;
 
-import com.servicea.students.dao.AccountsContactInfoDto;
+import com.servicea.students.service.AccountsContactInfoDto;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

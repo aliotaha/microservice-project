@@ -1,4 +1,4 @@
-package com.serviceb.teachers.rest;
+package com.serviceb.teachers.controller;
 
 import java.util.List;
 

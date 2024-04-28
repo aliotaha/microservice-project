@@ -2,6 +2,7 @@ package com.serviceb.teachers.service;
 
 import java.util.List;
 
+import com.serviceb.teachers.exception.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,11 @@ public class TeacherServicesImpl implements TeacherServices  {
 
 	@Override
 	public Teacher findTeacherById(Integer id) {
-		return repository.findById(id).get();
+		if (repository.findById(id).isPresent()) {
+			return repository.findById(id).get();
+		} else {
+			throw new NotFoundException("Teacher By ID: " + id + " is not Found");
+		}
 	}
 
 	@Override

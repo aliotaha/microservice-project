@@ -1,4 +1,4 @@
-package com.servicea.students.dao;
+package com.servicea.students.service;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

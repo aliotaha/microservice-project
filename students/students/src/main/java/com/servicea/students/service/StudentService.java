@@ -1,4 +1,4 @@
-package com.servicea.students.dao;
+package com.servicea.students.service;
 import com.servicea.students.entity.Student;
 import java.util.List;
 

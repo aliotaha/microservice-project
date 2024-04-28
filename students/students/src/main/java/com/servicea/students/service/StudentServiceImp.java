@@ -1,19 +1,14 @@
-package com.servicea.students.dao;
+package com.servicea.students.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
+import com.servicea.students.exception.NotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.servicea.students.entity.Student;
 import com.servicea.students.repository.StudentRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
-
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.TypedQuery;
 
 @Service
 public class StudentServiceImp implements StudentService {
@@ -30,8 +25,11 @@ public class StudentServiceImp implements StudentService {
 
 	@Override
 	public Student findStudentById(Integer id) {
-		
-		return repository.findById(id).get();
+		if (repository.findById(id).isPresent()) {
+			return repository.findById(id).get();
+		} else {
+			throw new NotFoundException("Student By ID: " + id + " is not Found");
+		}
 	}
 
 

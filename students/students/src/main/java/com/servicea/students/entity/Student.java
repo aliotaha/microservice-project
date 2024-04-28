@@ -1,11 +1,13 @@
 package com.servicea.students.entity;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name="student")
@@ -18,12 +20,18 @@ public class Student {
     private int id;
 
     @Column(name="first_name")
+    @NotEmpty(message = "First Name can not be a null or empty")
+    @Schema(description = "First Name of Student", example = "Ali")
     private String firstName;
 
     @Column(name="last_name")
+    @NotEmpty(message = "Last Name can not be a null or empty")
+    @Schema(description = "Last Name of Student", example = "Ali")
     private String lastName;
 
     @Column(name="email")
+    @NotEmpty(message = "Student Email can not be a null or empty")
+    @Schema(description = "Student Email", example = "xxx@tus.com")
     private String email;
 
     // define constructors
