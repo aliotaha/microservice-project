@@ -27,17 +27,23 @@ public class StudentRestController {
 	private StudentService student;
     
     public StudentRestController(StudentService theStudentDAO) {
-    	student = theStudentDAO;
+
+        student = theStudentDAO;
     }
 
     @GetMapping("/students")
     public List<Student> qureyAllstudents() {
+
         return student.findAllStudetns();
     }
     @GetMapping("/students/{id}")
     public Student qureyStudentById(@PathVariable int id ) {
     	
         return student.findStudentById(id);
+    }
+    @GetMapping("/students/by-subject/{subject}")
+    public List<Student> queryStudentsBySubject(@PathVariable String subject) {
+        return student.findStudentsBySubject(subject);
     }
     @PostMapping("/students")
     public Student createStudent(@RequestBody Student theStudent ) {

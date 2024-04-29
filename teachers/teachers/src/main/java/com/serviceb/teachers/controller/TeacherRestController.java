@@ -29,7 +29,10 @@ public class TeacherRestController {
     public TeacherRestController(TeacherServices theTeacher) {
     	teacherservices = theTeacher;
     }
-	
+    @GetMapping("/teachers/by-subject/{subject}")
+    public List<Teacher> queryTeacherBySubject(@PathVariable String subject) {
+        return teacherservices.findTeachersBySubject(subject);
+    }
 	@GetMapping("/teachers")
     public List<Teacher> qureyAllteacher() {
         return teacherservices.findAllTeacher();

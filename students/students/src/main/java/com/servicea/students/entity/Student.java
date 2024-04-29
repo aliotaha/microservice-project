@@ -34,18 +34,26 @@ public class Student {
     @Schema(description = "Student Email", example = "xxx@tus.com")
     private String email;
 
+
+
+    @Column(name="subject")
+    @NotEmpty(message = "Subject can not be a null or empty")
+    @Schema(description = "Name of Subject", example = "RHCSA")
+    private String subject;
+
     // define constructors
     public Student() {
 
     }
 
-    public Student(String firstName, String lastName, String email) {
+    public Student(String firstName, String lastName, String email, String subject) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.subject = subject;
     }
 
-    // define getters/setters
+// define getters/setters
 
     public int getId() {
         return id;
@@ -78,9 +86,16 @@ public class Student {
     public void setEmail(String email) {
         this.email = email;
     }
+    public String getSubject() {
+        return subject;
+    }
 
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
 
     // define toString() method
+
 
     @Override
     public String toString() {
@@ -89,6 +104,7 @@ public class Student {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
+                ", subject='" + subject + '\'' +
                 '}';
     }
 }

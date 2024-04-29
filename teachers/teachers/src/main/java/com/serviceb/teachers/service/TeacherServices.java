@@ -16,4 +16,6 @@ public interface TeacherServices {
 	
 	Teacher updateTeacher(Teacher student);
 
+	List<Teacher> findTeachersBySubject(String subject);
+
 }

@@ -32,6 +32,11 @@ public class StudentServiceImp implements StudentService {
 		}
 	}
 
+	@Override
+	public List<Student> findStudentsBySubject(String subject) {
+		return repository.findBySubject(subject);
+	}
+
 
 	@Override
 	public Student addStudent(Student student) {

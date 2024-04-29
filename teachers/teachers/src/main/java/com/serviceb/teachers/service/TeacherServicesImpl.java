@@ -46,4 +46,9 @@ public class TeacherServicesImpl implements TeacherServices  {
 		return teacher;
 	}
 
+	@Override
+	public List<Teacher> findTeachersBySubject(String subject) {
+		return repository.findBySubject(subject);
+	}
+
 }
