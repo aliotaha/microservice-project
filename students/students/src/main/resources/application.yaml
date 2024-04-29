@@ -17,5 +17,13 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
-
+management:
+  metrics:
+    export:
+      zipkin:
+        enabled: true
+  tracing:
+    zipkin:
+      enabled: true
+      baseUrl: http://localhost:9411/
 

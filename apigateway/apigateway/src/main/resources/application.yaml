@@ -11,7 +11,9 @@ spring:
         locator:
           enabled: false
           lowerCaseServiceId: true
-
+      httpclient:
+        connect-timeout: 1000
+        response-timeout: 2s
 
 management:
   endpoints:
@@ -23,6 +25,14 @@ management:
   info:
     env:
       enabled: true
+  metrics:
+    export:
+      zipkin:
+        enabled: true
+  tracing:
+    zipkin:
+      enabled: true
+      baseUrl: http://localhost:9411/
 info:
   app:
     name: "apigateway"

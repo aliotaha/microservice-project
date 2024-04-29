@@ -18,3 +18,13 @@ eureka:
 
 teacher-service:
   url: http://localhost:8082
+
+management:
+  metrics:
+    export:
+      zipkin:
+        enabled: true
+  tracing:
+    zipkin:
+      enabled: true
+      baseUrl: http://localhost:9411/
