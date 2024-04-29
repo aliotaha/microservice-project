@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/teachers/teachers/pom.xml" />
         <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
         <option value="$PROJECT_DIR$/cloudconfigserver/cloudconfigserver/pom.xml" />
+        <option value="$PROJECT_DIR$/apigateway/apigateway/pom.xml" />
       </list>
     </option>
   </component>
