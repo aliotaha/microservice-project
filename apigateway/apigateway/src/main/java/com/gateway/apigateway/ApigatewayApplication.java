@@ -17,16 +17,18 @@ public class ApigatewayApplication {
 
 
 	@Bean
-	public RouteLocator eazyBankRouteConfig(RouteLocatorBuilder routeLocatorBuilder) {
+	public RouteLocator easylearnRouteConfig(RouteLocatorBuilder routeLocatorBuilder) {
 		return routeLocatorBuilder.routes()
 				.route(p -> p
-						.path("/learn/students/**")
-						.filters( f -> f.rewritePath("/learn/students/(?<segment>.*)","/${segment}")
-								.addResponseHeader("X-Response-Time", LocalDateTime.now().toString()))
+						.path("/easylearn/students/**")
+						.filters( f -> f.rewritePath("/easylearn/students/(?<segment>.*)","/${segment}")
+								.addResponseHeader("X-Response-Time", LocalDateTime.now().toString())
+								.circuitBreaker(config -> config.setName("studentCircuitBreaker")
+										.setFallbackUri("forward:/contactSupport")))
 						.uri("lb://STUDENTS"))
 				.route(p -> p
-					.path("/learn/teachers/**")
-					.filters( f -> f.rewritePath("/learn/teachers/(?<segment>.*)","/${segment}")
+					.path("/easylearn/teachers/**")
+					.filters( f -> f.rewritePath("/easylearn/teachers/(?<segment>.*)","/${segment}")
 							.addResponseHeader("X-Response-Time", LocalDateTime.now().toString()))
 					.uri("lb://TEACHERS")).build();
 		
