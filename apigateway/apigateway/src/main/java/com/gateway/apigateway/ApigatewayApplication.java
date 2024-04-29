@@ -30,5 +30,6 @@ public class ApigatewayApplication {
 							.addResponseHeader("X-Response-Time", LocalDateTime.now().toString()))
 					.uri("lb://TEACHERS")).build();
 		
+
 	}
 }
